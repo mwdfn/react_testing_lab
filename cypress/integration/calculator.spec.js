@@ -59,6 +59,14 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '-3')
   })
 
+  it('should divide two numbers and display the expected number output', () => {
+    cy.get('#number8').click()
+    cy.get('#operator-divide').click()
+    cy.get('#number2').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '4')
+  })
+
   it('should display the expected decimal number output', () => {
     cy.get('#number9').click()
     cy.get('#operator-divide').click()
