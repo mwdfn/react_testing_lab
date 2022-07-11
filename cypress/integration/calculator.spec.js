@@ -22,12 +22,36 @@ describe("Calculator", () => {
   })
 
   // Do the arithmetical operations update the display with the result of the operation?
-  it('should update the display with results of operations', () => {
+  it('should update the display with results the addition operation', () => {
     cy.get('#number1').click()
     cy.get('#operator_add').click()
     cy.get('#number2').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '3')
+  })
+
+  it('should update the display with results the subtract operation', () => {
+    cy.get('#number2').click()
+    cy.get('#operator_subtract').click()
+    cy.get('#number1').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '1')
+  })
+
+  it('should update the display with results the multiply operation', () => {
+    cy.get('#number2').click()
+    cy.get('#operator_multiply').click()
+    cy.get('#number2').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '4')
+  })
+
+  it('should update the display with results the division operation', () => {
+    cy.get('#number4').click()
+    cy.get('#operator_multiply').click()
+    cy.get('#number2').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '2')
   })
 
   // Can multiple operations be chained together?
