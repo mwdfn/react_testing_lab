@@ -28,30 +28,34 @@ describe("Calculator", () => {
     cy.get('#number2').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '3')
+    cy.get('.clear')
   })
 
   it('should update the display with results the subtract operation', () => {
     cy.get('#number2').click()
-    cy.get('#operator_subtract').click()
+    cy.get('#operator-subtract').click()
     cy.get('#number1').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '1')
+    cy.get('.clear')
   })
 
   it('should update the display with results the multiply operation', () => {
     cy.get('#number2').click()
-    cy.get('#operator_multiply').click()
+    cy.get('#operator-multiply').click()
     cy.get('#number2').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '4')
+    cy.get('.clear')
   })
 
   it('should update the display with results the division operation', () => {
     cy.get('#number4').click()
-    cy.get('#operator_multiply').click()
+    cy.get('#operator-divide').click()
     cy.get('#number2').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '2')
+    cy.get('.clear')
   })
 
   // Can multiple operations be chained together?
